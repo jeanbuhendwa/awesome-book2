@@ -2,6 +2,9 @@
 package.json
 package-lock.json
 
+# Luxon file
+modules/luxon.js
+
 # Logs
 logs
 *.log
