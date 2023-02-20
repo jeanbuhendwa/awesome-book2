@@ -1,19 +1,19 @@
-const bookList = document.querySelector(".books");
-const bookName = document.getElementById("book_name");
-const autName = document.getElementById("auther_name");
+const bookList = document.querySelector('.books');
+const bookName = document.getElementById('book_name');
+const autName = document.getElementById('auther_name');
 
 export default class Book {
   constructor() {
     this.bookStore = [
       {
-        id: "book_0",
-        title: "object-oriented analysis and design",
-        author: "Martin B",
+        id: 'book_0',
+        title: 'object-oriented analysis and design',
+        author: 'Martin B',
       },
       {
-        id: "book_1",
-        title: "software design principles",
-        author: "Jose K",
+        id: 'book_1',
+        title: 'software design principles',
+        author: 'Jose K',
       },
     ];
     this.bookCount = this.bookStore.length - 1;
@@ -43,8 +43,8 @@ export default class Book {
     this.displayBook(objBook);
     this.updateLocalStorage();
 
-    bookName.value = "";
-    autName.value = "";
+    bookName.value = '';
+    autName.value = '';
   };
 
   removeBook = (e) => {
@@ -55,15 +55,15 @@ export default class Book {
   };
 
   restoreLocalStorage = () => {
-    this.bookStore = JSON.parse(localStorage.getItem("book_list"));
-    this.bookCount = JSON.parse(localStorage.getItem("book_count"));
+    this.bookStore = JSON.parse(localStorage.getItem('book_list'));
+    this.bookCount = JSON.parse(localStorage.getItem('book_count'));
     for (let i = 0; i < this.bookStore.length; i += 1) {
       this.displayBook(this.bookStore[i]);
     }
   };
 
   updateLocalStorage = () => {
-    localStorage.setItem("book_list", JSON.stringify(this.bookStore));
-    localStorage.setItem("book_count", JSON.stringify(this.bookCount));
+    localStorage.setItem('book_list', JSON.stringify(this.bookStore));
+    localStorage.setItem('book_count', JSON.stringify(this.bookCount));
   };
 }
